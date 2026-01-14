@@ -1,0 +1,49 @@
+{
+  "name": "supa-blog-automation",
+  "version": "1.0.0",
+  "description": "Suparank ile tam otomatik SEO blog içerik üretimi - Türkçe optimize",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx suparank",
+    "test": "echo 'Testing Suparank MCP connection...' && npx suparank --version",
+    "setup": "npm install && echo 'Setup complete! Check .env file for API keys.'",
+    "blog:create": "echo 'Use Claude Code to create blogs'",
+    "env:check": "node -e \"require('dotenv').config(); console.log('GEMINI_API_KEY:', process.env.GEMINI_API_KEY ? '✓ Set' : '✗ Missing');\""
+  },
+  "keywords": [
+    "suparank",
+    "seo",
+    "blog",
+    "ai",
+    "content-generation",
+    "turkish",
+    "gemini",
+    "mcp"
+  ],
+  "author": "SUPA",
+  "license": "MIT",
+  "dependencies": {
+    "suparank": "latest",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {
+    "@google/generative-ai": "^0.1.3",
+    "firecrawl": "latest",
+    "seo-research-mcp": "latest"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ufkterzici-coder/SUPA"
+  },
+  "config": {
+    "suparank": {
+      "credentials": "./.suparank-credentials.json",
+      "env": "./.env"
+    }
+  }
+}
